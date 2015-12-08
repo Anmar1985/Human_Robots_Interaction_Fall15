@@ -14,8 +14,8 @@ passAccelData = _apiwrapper.passAccelDataJS
 passAccelData.argtype =[c_int]
 passAccelData.restype = c_int
 
-passAccelData2 = _apiwrapper.PassAccelData2JS
-passAccelData2.argtype =[c_int]
+passAccelData2 = _apiwrapper.PassAccelData2JS    # Get Accelerometer reading by setting the argument 
+passAccelData2.argtype =[c_int]   #to 1 for Y axis 2 for X and 3 for Z
 passAccelData2.restype = c_int
 
 Initialize = _apiwrapper.InitializeJS #Initializes the robot. Without this function nothing will work.
