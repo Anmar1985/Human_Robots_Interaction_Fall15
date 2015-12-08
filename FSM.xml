@@ -1,0 +1,290 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE entity PUBLIC "-//UC Berkeley//DTD MoML 1//EN"
+    "http://ptolemy.eecs.berkeley.edu/xml/dtd/MoML_1.dtd">
+<entity name="HRI- FSM" class="ptolemy.domains.modal.kernel.FSMActor">
+    <property name="_createdBy" class="ptolemy.kernel.attributes.VersionAttribute" value="10.0.1">
+    </property>
+    <property name="_library" class="ptolemy.moml.LibraryAttribute">
+        <configure>
+    <entity name="StateLibrary" class="ptolemy.kernel.CompositeEntity"><input source="ptolemy/configs/basicUtilities.xml"></input><entity name="State" class="ptolemy.domains.modal.kernel.State"><property name="_centerName" class="ptolemy.kernel.util.Attribute"></property></entity></entity>
+  </configure>
+    </property>
+    <property name="_windowProperties" class="ptolemy.actor.gui.WindowPropertiesAttribute" value="{bounds={0, 23, 1280, 730}, maximized=false}">
+    </property>
+    <property name="_vergilSize" class="ptolemy.actor.gui.SizeAttribute" value="[1046, 619]">
+    </property>
+    <property name="_vergilZoomFactor" class="ptolemy.data.expr.ExpertParameter" value="1.0000000000000013">
+    </property>
+    <property name="_vergilCenter" class="ptolemy.data.expr.ExpertParameter" value="{653.1230468749995, 313.70605468750006}">
+    </property>
+    <entity name="Initial" class="ptolemy.domains.modal.kernel.State">
+        <property name="refinementName" class="ptolemy.kernel.util.StringAttribute" value="init">
+        </property>
+        <property name="isInitialState" class="ptolemy.data.expr.Parameter" value="true">
+        </property>
+        <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[585.0, 65.0]">
+        </property>
+    </entity>
+    <entity name="Neutral" class="ptolemy.domains.modal.kernel.State">
+        <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[585.0, 145.0]">
+        </property>
+    </entity>
+    <entity name="Blue Bully" class="ptolemy.domains.modal.kernel.State">
+        <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[915.0, 380.0]">
+        </property>
+    </entity>
+    <entity name="Red Bully" class="ptolemy.domains.modal.kernel.State">
+        <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[250.0, 410.0]">
+        </property>
+    </entity>
+    <entity name="Both Bully" class="ptolemy.domains.modal.kernel.State">
+        <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[595.0, 570.0]">
+        </property>
+    </entity>
+    <entity name="GetUp" class="ptolemy.domains.modal.kernel.State">
+        <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[235.0, 145.0]">
+        </property>
+    </entity>
+    <entity name="GetUp2" class="ptolemy.domains.modal.kernel.State">
+        <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[945.0, 150.0]">
+        </property>
+    </entity>
+    <entity name="Deffence" class="ptolemy.domains.modal.kernel.State">
+        <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[590.0, 230.0]">
+        </property>
+    </entity>
+    <entity name="Approach" class="ptolemy.domains.modal.kernel.State">
+        <property name="_hideName" class="ptolemy.data.expr.SingletonParameter" value="true">
+        </property>
+        <property name="_location" class="ptolemy.kernel.util.Location" value="[595.0, 330.0]">
+        </property>
+    </entity>
+    <relation name="relation" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.017855124632140406">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="1.5382239104953002">
+        </property>
+    </relation>
+    <relation name="relation2" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="If Gyro = Fall and LastColorRead = Blue">
+        </property>
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="-0.6005871252224511">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="-0.23829909309437416">
+        </property>
+    </relation>
+    <relation name="relation3" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="If Gyro = Fall and LastColorRead = Red">
+        </property>
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.3997332026887126">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="-2.995014781827896">
+        </property>
+    </relation>
+    <relation name="relation5" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="If Command = RedisGood">
+        </property>
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.27897216009408">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="-0.6903248968614776">
+        </property>
+    </relation>
+    <relation name="relation6" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="If Gyro = Fall and LastColorRead = Red">
+        </property>
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="-0.9761639218307616">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="2.5450636329745304">
+        </property>
+    </relation>
+    <relation name="relation7" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="If Command = BlueisGood">
+        </property>
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="-0.12929679881976042">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="-2.874000711755132">
+        </property>
+    </relation>
+    <relation name="relation8" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="If Command = RedisGood">
+        </property>
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="-0.7635251294747046">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="-0.6375071225871027">
+        </property>
+    </relation>
+    <relation name="relation9" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="If Command = BlueisGood">
+        </property>
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.7352460621492489">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="-2.535712910090424">
+        </property>
+    </relation>
+    <relation name="relation10" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.6283185307179586">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="1.3459128696645473">
+        </property>
+    </relation>
+    <relation name="relation11" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="-0.5413932816309931">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="1.4320668811345898">
+        </property>
+    </relation>
+    <relation name="relation12" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="Camera = Red">
+        </property>
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="-0.5586784523861655">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="-0.4855514294544273">
+        </property>
+    </relation>
+    <relation name="relation13" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="Camera = Blue">
+        </property>
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="-0.2997193661487293">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="-0.2611983610156137">
+        </property>
+    </relation>
+    <relation name="relation14" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="-0.34721006551515265">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="2.880161252381349">
+        </property>
+    </relation>
+    <relation name="relation15" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="-0.2417056486430018">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="2.6896801800879384">
+        </property>
+    </relation>
+    <relation name="relation16" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="Camera = Blue">
+        </property>
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.6283185307179586">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="-3.124784886175264">
+        </property>
+    </relation>
+    <relation name="relation17" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.41440883280177876">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="0.4256591380934587">
+        </property>
+    </relation>
+    <relation name="relation18" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.2838249749622553">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="0.18098820912390234">
+        </property>
+    </relation>
+    <relation name="relation19" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="Camera = Red">
+        </property>
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.26671480132763004">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="2.9902940169423333">
+        </property>
+    </relation>
+    <relation name="relation20" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="Camera = Red OR Blue">
+        </property>
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.38893395033642036">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="-1.5704906066207356">
+        </property>
+    </relation>
+    <relation name="relation21" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.6478059812929086">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="1.533249469262916">
+        </property>
+    </relation>
+    <relation name="relation22" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="Camera = Red OR Blue">
+        </property>
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="1.2566330169481497">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="1.6573805267839017">
+        </property>
+    </relation>
+    <relation name="relation23" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="1.1788531848569765">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="-1.500433498578955">
+        </property>
+    </relation>
+    <relation name="relation4" class="ptolemy.domains.modal.kernel.Transition">
+        <property name="guardExpression" class="ptolemy.kernel.util.StringAttribute" value="If Gyro = Fall and LastColorRead = Blue">
+        </property>
+        <property name="exitAngle" class="ptolemy.data.expr.Parameter" value="0.8968098196310943">
+        </property>
+        <property name="gamma" class="ptolemy.data.expr.Parameter" value="0.4876611967856695">
+        </property>
+    </relation>
+    <link port="Initial.outgoingPort" relation="relation"/>
+    <link port="Neutral.incomingPort" relation="relation"/>
+    <link port="Neutral.incomingPort" relation="relation8"/>
+    <link port="Neutral.incomingPort" relation="relation9"/>
+    <link port="Neutral.incomingPort" relation="relation23"/>
+    <link port="Neutral.outgoingPort" relation="relation2"/>
+    <link port="Neutral.outgoingPort" relation="relation3"/>
+    <link port="Neutral.outgoingPort" relation="relation22"/>
+    <link port="Blue Bully.incomingPort" relation="relation5"/>
+    <link port="Blue Bully.incomingPort" relation="relation11"/>
+    <link port="Blue Bully.incomingPort" relation="relation17"/>
+    <link port="Blue Bully.incomingPort" relation="relation18"/>
+    <link port="Blue Bully.outgoingPort" relation="relation6"/>
+    <link port="Blue Bully.outgoingPort" relation="relation9"/>
+    <link port="Blue Bully.outgoingPort" relation="relation16"/>
+    <link port="Blue Bully.outgoingPort" relation="relation19"/>
+    <link port="Red Bully.incomingPort" relation="relation7"/>
+    <link port="Red Bully.incomingPort" relation="relation10"/>
+    <link port="Red Bully.incomingPort" relation="relation14"/>
+    <link port="Red Bully.incomingPort" relation="relation15"/>
+    <link port="Red Bully.outgoingPort" relation="relation8"/>
+    <link port="Red Bully.outgoingPort" relation="relation12"/>
+    <link port="Red Bully.outgoingPort" relation="relation13"/>
+    <link port="Red Bully.outgoingPort" relation="relation4"/>
+    <link port="Both Bully.incomingPort" relation="relation6"/>
+    <link port="Both Bully.incomingPort" relation="relation21"/>
+    <link port="Both Bully.incomingPort" relation="relation4"/>
+    <link port="Both Bully.outgoingPort" relation="relation5"/>
+    <link port="Both Bully.outgoingPort" relation="relation7"/>
+    <link port="Both Bully.outgoingPort" relation="relation20"/>
+    <link port="GetUp.incomingPort" relation="relation3"/>
+    <link port="GetUp.outgoingPort" relation="relation10"/>
+    <link port="GetUp2.incomingPort" relation="relation2"/>
+    <link port="GetUp2.outgoingPort" relation="relation11"/>
+    <link port="Deffence.incomingPort" relation="relation12"/>
+    <link port="Deffence.incomingPort" relation="relation16"/>
+    <link port="Deffence.incomingPort" relation="relation20"/>
+    <link port="Deffence.outgoingPort" relation="relation15"/>
+    <link port="Deffence.outgoingPort" relation="relation17"/>
+    <link port="Deffence.outgoingPort" relation="relation21"/>
+    <link port="Approach.incomingPort" relation="relation13"/>
+    <link port="Approach.incomingPort" relation="relation19"/>
+    <link port="Approach.incomingPort" relation="relation22"/>
+    <link port="Approach.outgoingPort" relation="relation14"/>
+    <link port="Approach.outgoingPort" relation="relation18"/>
+    <link port="Approach.outgoingPort" relation="relation23"/>
+</entity>
