@@ -105,12 +105,12 @@ bool Initialize() {
 int passAccelData(int accelDir){
 int FB_accel,RL_accel;
 
-FB_accel = MotionStatus::FB_ACCEL;
-RL_accel = MotionStatus::RL_ACCEL;
-if (accelDir==1){
-return FB_accel;}
-else {
-return RL_accel;}
+   FB_accel = MotionStatus::FB_ACCEL;
+   RL_accel = MotionStatus::RL_ACCEL;
+   if (accelDir==1){
+	return FB_accel;}
+   else {
+	return RL_accel;}
 
 }
 // turn all servos off (make sure robot is sitting)
@@ -312,8 +312,33 @@ int BatteryVoltLevel() {
 ***                   Sensors        **
 ****************************************/
 // add sensor
+int CheckGyro(int Axis){
+int GyroData,gyro;
+   if (Axis == 1)
+     	gyro = cm730.ReadWord(200,38, &GyroData, 0);
+   else if (Axis == 2) 
+     	gyro = cm730.ReadByte(200,40, &GyroData, 0);
+   else if (Axis == 3)
+	gyro = cm730.ReadWord(200,42, &GyroData, 0);
+   else {
+	printf("Wrong Axis");
+	return -1;}
+return GyroData;
+}
 
-
+int CheckAccel(int Axis){
+int AccelData,accel;
+   if (Axis == 1)
+        accel = cm730.ReadWord(200,44, &AccelData, 0);
+   else if (Axis == 2)
+        accel = cm730.ReadByte(200,46, &AccelData, 0);
+   else if (Axis == 3)
+        accel= cm730.ReadWord(200,48, &AccelData, 0);
+   else {
+        printf("Wrong Axis");
+	return -1;}
+return AccelData;
+}
 
 /**************************************
 ***            Direct Motor Control  **
@@ -369,6 +394,8 @@ extern "C" {
     int CheckServosJS() {return CheckServos();}
     int BatteryVoltLevelJS() {return BatteryVoltLevel();}
     // Sensors
+    int PassAccelData2JS(int AxisSel) {return CheckAccel(AxisSel);} 
+    int PassGyroDataJS(int AxisSel)   {return CheckGyro(AxisSel);} 
 	// Motor Control
 	void SetMotorValueJS(int id, int value) {SetMotorValue(id, value);}
 	int GetMotorValueJS(int id) {return GetMotorValue(id);}

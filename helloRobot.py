@@ -12,7 +12,7 @@ def Main():
         try:
                 if api.Initialize():
                         print("Initalized")
-                        command = 1
+                        command = 10
                 else:
                         print("Intialization failed")
                 #api.ServoShutdown()
@@ -20,7 +20,7 @@ def Main():
                 print('Stand up')
                 #value = int(input("Turn head to"))
                 #api.SetMotorValue(20, value)
-                Run(command)
+ #               Run(command)
         except (KeyboardInterrupt):
                 api.ServoShutdown()
                 sys.exit()
@@ -40,6 +40,10 @@ def Run(command):
                 #api.Walk(True)
                 #api.WalkMove(20)
         #move back
+
+	elif(command == 10):
+	 print (api.passAccelData2(1))
+
         elif(command == 0):
                 api.PlayAction(8)
                 print('Stand up')
@@ -55,8 +59,10 @@ def Run(command):
                 api.WalkTurn(-20)
         elif(command == 5):
                 api.WalkMove(0)
-        Run(command)
+#        Run(command)
 
 
 if __name__ == "__main__": 
   Main()
+  while (True):
+  	Run(10)
